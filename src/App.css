@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+#root,
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background: url("./images/bg.jpg") no-repeat center center fixed;
+	background-size: cover;
+	font-family: arial, sans-serif;
+	font-size: 18px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.toDo {
+	padding: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.toDo button {
+	color: green;
+	margin-right: 10px;
+	font-weight: 800;
+	width: 40px;
+	padding: 5px 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	transition: 0.2s;
+	border: 2px solid #ddd;
+	outline: none;
 }
-
-.App-link {
-  color: #61dafb;
+.toDo button:hover {
+	color: red;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toDoList {
+	background-color: #eee;
+	opacity: 0.8;
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 20px 50px;
+	border: 1px solid #444;
+	border-radius: 10px;
+}
+.toDoList h1 {
+	float: left;
+	color: #444;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+.toDoList input {
+	width: 90%;
+	padding: 12px 20px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	outline: 0;
+	border: 1px solid #444;
+}
+.toDoList input:focus {
+	color: #2980b9;
+	border: 1px solid #e67e22;
+}
+.clock {
+	float: right;
+	margin-top: 40px;
 }
