@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ToDo from "./ToDo";
 import Clock from "./Clock";
 
@@ -27,9 +27,20 @@ const data = [
 ];
 
 const ToDoList = () => {
-	const [currentId, setCurrentId] = React.useState(data[data.length - 1].id);
-	const [todos, setTodos] = React.useState([...data]);
-	const [inputVal, setInputVal] = React.useState("");
+	const [currentId, setCurrentId] = useState(data[data.length - 1].id);
+	const [todos, setTodos] = useState([...data]);
+	const [inputVal, setInputVal] = useState("");
+
+	useEffect(() => {
+		const data = localStorage.getItem("todos");
+		if (data) {
+			setTodos(JSON.parse(data));
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	});
 
 	const handleKeyDown = (e) => {
 		if (e.key === "Enter" && inputVal !== "") {
